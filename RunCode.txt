@@ -1,0 +1,7 @@
+cd "C:\Users\Hype AMD\OneDrive\Dokumen\Project For GitHub\Simulation" ----> Masuk ke folder utama project (pastikan path ini sesuai dengan lokasi folder kamu di komputer).
+Remove-Item -Path build -Recurse -Force ----> Menghapus folder build lama secara paksa (berguna jika kamu ingin melakukan clean rebuild dari nol agar tidak ada file sampah yang bentrok).
+mkdir build ----> Membuat folder baru bernama build untuk menampung semua file hasil proses compile.
+cd build ----> Masuk ke dalam folder build yang baru saja dibuat.
+cmake -G "MinGW Makefiles" "-DCMAKE_POLICY_VERSION_MINIMUM=3.5" .. ----> Menjalankan CMake untuk membaca CMakeLists.txt, mendownload otomatis library (GLFW, GLM, ImGui), dan membuat file Makefile. (Tanda kutip dan flag -DCMAKE_POLICY... wajib ada untuk menghindari error CMake versi 4.x dan path yang mengandung spasi).
+mingw32-make ----> Meng-compile seluruh source code C++ (.cpp dan .h) menjadi file executable (.exe) menggunakan compiler MinGW.
+.\NeutronStarSimulation.exe ----> Menjalankan program simulasi 3D yang sudah berhasil di-compile.

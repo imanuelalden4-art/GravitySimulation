@@ -1,0 +1,30 @@
+# Folder Build (JANGAN DI-UPLOAD)
+build/
+cmake-build-debug/
+cmake-build-release/
+
+# File hasil compile & object
+*.exe
+*.obj
+*.o
+*.a
+*.so
+*.dll
+*.lib
+
+# File CMake internal
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# File Visual Studio / IDE
+.vs/
+.vscode/
+*.sln
+*.vcxproj
+*.user
+
+# File OS
+Thumbs.db
+.DS_Store

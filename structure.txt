@@ -1,0 +1,58 @@
+NeutronStarSimulation/
+│
+├── CMakeLists.txt                      # Konfigurasi build CMake
+│
+├── include/                            # Header files (.h)
+│   ├── Camera.h                        # Sistem kamera 3D (orbit, zoom, pan)
+│   ├── Shader.h                        # Loader dan utility shader OpenGL
+│   ├── SpacetimeGrid.h                 # Grid spacetime yang bisa dideformasi
+│   ├── NeutronStar.h                   # Model 3D bintang neutron
+│   ├── Particle.h                      # Struktur data partikel uji
+│   ├── ParticleSystem.h                # Sistem orbit partikel
+│   ├── Simulation.h                    # Logika utama simulasi
+│   ├── Renderer.h                      # Rendering pipeline OpenGL
+│   ├── UI.h                            # Panel kontrol Dear ImGui
+│   └── glad/
+│       └── glad.h                      # OpenGL loader header (generate dari glad.dav1d.de)
+│
+├── src/                                # Source files (.cpp)
+│   ├── main.cpp                        # Entry point & game loop utama
+│   ├── Camera.cpp                      # Implementasi kamera
+│   ├── Shader.cpp                      # Implementasi shader
+│   ├── SpacetimeGrid.cpp               # Implementasi grid spacetime
+│   ├── NeutronStar.cpp                 # Implementasi bintang neutron
+│   ├── Particle.cpp                    # Implementasi partikel
+│   ├── ParticleSystem.cpp              # Implementasi sistem partikel
+│   ├── Simulation.cpp                  # Implementasi logika simulasi
+│   ├── Renderer.cpp                    # Implementasi renderer
+│   ├── UI.cpp                          # Implementasi UI ImGui
+│   └── glad.c                          # OpenGL loader source (generate dari glad.dav1d.de)
+│
+├── shaders/                            # GLSL shader files
+│   ├── grid.vert                       # Vertex shader untuk grid spacetime
+│   ├── grid.frag                       # Fragment shader untuk grid
+│   ├── star.vert                       # Vertex shader untuk bintang neutron
+│   ├── star.frag                       # Fragment shader untuk bintang (dengan glow)
+│   ├── particle.vert                   # Vertex shader untuk partikel
+│   ├── particle.frag                   # Fragment shader untuk partikel
+│   ├── starfield.vert                  # Vertex shader untuk latar bintang
+│   └── starfield.frag                  # Fragment shader untuk latar bintang
+│
+├── assets/                             # Aset tambahan (opsional)
+│   ├── textures/                       # Textur (jika diperlukan)
+│   └── fonts/                          # Font untuk UI
+│
+├── build/                              # Folder hasil build (auto-generated)
+│   ├── CMakeCache.txt
+│   ├── Makefile
+│   ├── NeutronStarSimulation           # Executable (Linux/Mac)
+│   ├── NeutronStarSimulation.exe       # Executable (Windows)
+│   └── shaders/                        # Copy otomatis dari folder shaders/
+│
+├── external/                           # Dependencies (auto-download via CMake)
+│   ├── glfw/                           # Library window & input
+│   ├── glm/                            # Library matematika
+│   └── imgui/                          # Library UI
+│
+├── README.md                           # Dokumentasi proyek
+└── .gitignore                          # File yang diabaikan Git
